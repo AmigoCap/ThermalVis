@@ -311,8 +311,10 @@ def recommand_book():
 def gray_Scale(imgname):
     # In[14]:
     from PIL import Image
-    img = Image.open(imgname).convert('LA')
-    img.save(imgname+'Gray.png')
+    img = Image.open(open(imgname+'.png','rb')).convert('LA')
+    imgGray = imgname+'Gray.png'
+    img.save(imgGray)
+    return imgGray
     #https://raspberrypi.stackexchange.com/questions/45570/how-do-i-make-serial-work-on-the-raspberry-pi3
     #Do not change "root=/dev/mmcblk0p2"
     #Then enable GPIO: sudo raspi-config, then, Choose interfacing options, then, Remote GPIO, then Reboot

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 17, 2018 at 11:01 PM
+-- Generation Time: Feb 14, 2018 at 10:04 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `books` (
   `id` mediumint(8) UNSIGNED NOT NULL,
-  `ISBN` varchar(255) DEFAULT NULL,
+  `ISBN` mediumint(9) DEFAULT NULL,
   `Livre_name` text,
   `Livre_theme` text
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -38,143 +38,106 @@ CREATE TABLE `books` (
 --
 
 INSERT INTO `books` (`id`, `ISBN`, `Livre_name`, `Livre_theme`) VALUES
-(1, '1', 'trees of the sea', 'Aventure'),
-(2, '2', 'butterfly of yesterday', 'Aventure'),
-(3, '3', 'rat of power', 'Aventure'),
-(4, '4', 'boys of the ocean', 'Aventure'),
-(5, '5', 'turtles and invaders', 'Aventure'),
-(6, '6', 'foes and spies', 'Aventure'),
-(7, '7', 'harmony of tomorrow', 'Aventure'),
-(8, '8', 'disruption of the day', 'Aventure'),
-(9, '9', 'justice in my enemies.', 'Aventure'),
-(10, '10', 'changing my past', 'Aventure'),
-(11, '11', 'lion of the solstice', 'Aventure'),
-(12, '12', 'descendant of time,', 'Aventure'),
-(13, '13', 'pilots of greatness', 'Aventure'),
-(14, '14', 'pirates without time', 'Aventure.'),
-(15, '15', 'turtles and armies', 'Aventure'),
-(16, '16', 'aliens and kings', 'Aventure'),
-(17, '17', 'will of the frontline', 'Aventure'),
-(18, '18', 'destiny without direction', 'Aventure'),
-(19, '19', 'screams at the town', 'Aventure'),
-(20, '20', 'shelter in my friends', 'Aventure'),
-(21, '21', 'visitor in the forest', 'Romance'),
-(22, '22', 'sweetie with brown hair', 'Romance'),
-(23, '23', 'knights without fear', 'Romance'),
-(24, '24', 'neighbors of joy', 'Romance'),
-(25, '25', 'boyfriends and girls', 'Romance'),
-(26, '26', 'strangers and knights,', 'Romance'),
-(27, '27', 'accident of bliss', 'Romance'),
-(28, '28', 'romance of rainbows', 'Romance'),
-(29, '29', 'listening to myself', 'Romance'),
-(30, '30', 'smile at my man', 'Romance'),
-(31, '31', 'man with blond hair', 'Romance'),
-(32, '32', 'girlfriend of my admiration', 'Romance'),
-(33, '33', 'foreigners with curly hair', 'Romance'),
-(34, '34', 'angels of paradise', 'Romance'),
-(35, '35', 'knights and girlfriends', 'Romance'),
-(36, '36', 'nymphs and wifes', 'Romance'),
-(37, '37', 'vision of devotion', 'Romance'),
-(38, '38', 'destiny of the evening', 'Romance'),
-(39, '39', 'guarding my nightmares', 'Romance'),
-(40, '40', 'lucky with the husband', 'Romance'),
-(41, '41', 'woman of darkness', 'Drama'),
-(42, '42', 'inventor of agony', 'Drama'),
-(43, '43', 'collectors of the forest', 'Drama'),
-(44, '44', 'saviors without a goal', 'Drama'),
-(45, '45', 'collectors and friends', 'Drama'),
-(46, '46', 'butchers and companions', 'Drama'),
-(47, '47', 'accidents without hope', 'Drama'),
-(48, '48', 'anger of dread', 'Drama'),
-(49, '49', 'searching in the mines', 'Drama'),
-(50, '50', 'cruelty of my future', 'Drama'),
-(51, '51', 'defender of heaven', 'Fantasy'),
-(52, '52', 'hero of limbo', 'Fantasy'),
-(53, '53', 'priests of my imagination', 'Fantasy'),
-(54, '54', 'men without sin', 'Fantasy'),
-(55, '55', 'wizards and children', 'Fantasy'),
-(56, '56', 'bandits and swindlers', 'Fantasy'),
-(57, '57', 'demise of whispers', 'Fantasy'),
-(58, '58', 'spells without sin', 'Fantasy'),
-(59, '59', 'challenging the jungle', 'Fantasy'),
-(60, '60', 'bound to my end', 'Fantasy'),
-(61, '61', 'witch in the lake', 'Horreur'),
-(62, '62', 'owl at the lake', 'Horreur'),
-(63, '63', 'rats in the castle', 'Horreur'),
-(64, '64', 'boys in my nightmares', 'Horreur'),
-(65, '65', 'figures and cats', 'Horreur'),
-(66, '66', 'visitors and spiders', 'Horreur'),
-(67, '67', 'hands in the fog', 'Horreur'),
-(68, '68', 'footsteps in my closet', 'Horreur'),
-(69, '69', 'rotten in the shadows', 'Horreur'),
-(70, '70', 'forsaken in the graveyard', 'Horreur'),
-(71, '71', 'foreigner of tomorrow', 'Mystery'),
-(72, '72', 'rebel of outer space', 'Mystery'),
-(73, '73', 'slaves of a dog', 'Mystery'),
-(74, '74', 'trees in the city', 'Mystery'),
-(75, '75', 'lords and companions', 'Mystery'),
-(76, '76', 'priests and wives', 'Mystery'),
-(77, '77', 'explosion of a person', 'Mystery'),
-(78, '78', 'predictions of darkness', 'Mystery'),
-(79, '79', 'shrouded by the fog', 'Mystery'),
-(80, '80', 'guilt of the world', 'Mystery'),
-(81, '81', 'slave of a person', 'Mystery'),
-(82, '82', 'descendant of light', 'Mystery'),
-(83, '83', 'hunters of the mountain', 'Mystery'),
-(84, '84', 'foes of a painting', 'Mystery'),
-(85, '85', 'serpents and figures', 'Mystery'),
-(86, '86', 'officers and lions', 'Mystery'),
-(87, '87', 'explosion in the lake', 'Mystery'),
-(88, '88', 'enigma of tomorrow', 'Mystery'),
-(89, '89', 'hatred of my destiny', 'Mystery'),
-(90, '90', 'enchanted by the end', 'Mystery'),
-(91, '91', 'human of the ocean', 'Science_Fiction'),
-(92, '92', 'commander of the sands', 'Science_Fiction'),
-(93, '93', 'boys of the worlds', 'Science_Fiction'),
-(94, '94', 'martians of outer space', 'Science_Fiction'),
-(95, '95', 'friends and volunteers', 'Science_Fiction'),
-(96, '96', 'aliens and traitors', 'Science_Fiction'),
-(97, '97', 'planet of time', 'Science_Fiction'),
-(98, '98', 'end of the universe', 'Science_Fiction'),
-(99, '99', 'courage for the secrets', 'Science_Fiction'),
-(100, '100', 'alive in a nuclear war', 'Science_Fiction');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `booksids`
---
-
-CREATE TABLE `booksids` (
-  `livreId` int(11) NOT NULL,
-  `Livre_name` varchar(255) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `booksids`
---
-
-INSERT INTO `booksids` (`livreId`, `Livre_name`) VALUES
-(1, 'butterfly of yesterday'),
-(2, 'butterfly of yesterday'),
-(3, 'rat of power'),
-(4, 'boys of the ocean'),
-(5, 'trees of the sea'),
-(6, 'turtles and invaders'),
-(7, 'foes and spies'),
-(8, 'harmony of tomorrow'),
-(9, 'justice in my enemies'),
-(10, 'changing my past'),
-(11, 'lion of the solstice'),
-(12, 'descendant of time'),
-(13, 'pilots of greatness'),
-(14, 'pirates without time'),
-(15, 'turtles and armies'),
-(16, 'aliens and kings'),
-(17, 'will of the frontline'),
-(18, 'destiny without direction'),
-(19, 'screams at the town'),
-(20, 'shelter in my friends');
+(1, 1, 'tempor erat', 'ipsum'),
+(2, 2, 'Vestibulum ante', 'Donec'),
+(3, 3, 'semper auctor.', 'Cras'),
+(4, 4, 'lorem ipsum', 'id'),
+(5, 5, 'Vivamus rhoncus.', 'sed'),
+(6, 6, 'nec enim.', 'dolor'),
+(7, 7, 'Nullam scelerisque', 'et'),
+(8, 8, 'eu eros.', 'ac,'),
+(9, 9, 'diam luctus', 'ornare'),
+(10, 10, 'dictum eleifend,', 'Ut'),
+(11, 11, 'vulputate velit', 'parturient'),
+(12, 12, 'mauris sagittis', 'diam.'),
+(13, 13, 'Nulla tincidunt,', 'nibh'),
+(14, 14, 'eget metus.', 'euismod'),
+(15, 15, 'in magna.', 'Maecenas'),
+(16, 16, 'Nulla eget', 'eu'),
+(17, 17, 'ornare, elit', 'et'),
+(18, 18, 'odio semper', 'natoque'),
+(19, 19, 'metus. In', 'orci.'),
+(20, 20, 'convallis, ante', 'eleifend,'),
+(21, 21, 'velit. Quisque', 'neque'),
+(22, 22, 'commodo hendrerit.', 'imperdiet'),
+(23, 23, 'morbi tristique', 'vitae'),
+(24, 24, 'nec tempus', 'dui,'),
+(25, 25, 'massa lobortis', 'nec,'),
+(26, 26, 'ornare sagittis', 'eleifend,'),
+(27, 27, 'eu tellus', 'tellus.'),
+(28, 28, 'Sed molestie.', 'sem,'),
+(29, 29, 'non nisi.', 'urna'),
+(30, 30, 'egestas rhoncus.', 'commodo'),
+(31, 31, 'tristique neque', 'sagittis.'),
+(32, 32, 'Aliquam erat', 'dui.'),
+(33, 33, 'venenatis vel,', 'urna'),
+(34, 34, 'fringilla, porttitor', 'eu'),
+(35, 35, 'fermentum risus,', 'vitae'),
+(36, 36, 'erat, eget', 'mus.'),
+(37, 37, 'lobortis mauris.', 'vulputate,'),
+(38, 38, 'in magna.', 'neque'),
+(39, 39, 'dolor dolor,', 'facilisis'),
+(40, 40, 'ac arcu.', 'odio,'),
+(41, 41, 'sem. Nulla', 'ipsum'),
+(42, 42, 'posuere cubilia', 'neque'),
+(43, 43, 'Vivamus rhoncus.', 'non,'),
+(44, 44, 'laoreet, libero', 'Phasellus'),
+(45, 45, 'quis turpis', 'vel'),
+(46, 46, 'Integer vulputate,', 'gravida.'),
+(47, 47, 'Nunc sed', 'sollicitudin'),
+(48, 48, 'erat semper', 'elementum,'),
+(49, 49, 'dolor sit', 'a,'),
+(50, 50, 'nec, malesuada', 'non,'),
+(51, 51, 'ac mattis', 'Sed'),
+(52, 52, 'leo. Vivamus', 'mattis'),
+(53, 53, 'lectus sit', 'semper'),
+(54, 54, 'ac orci.', 'Integer'),
+(55, 55, 'eget mollis', 'scelerisque'),
+(56, 56, 'nisi nibh', 'Lorem'),
+(57, 57, 'Donec tempus,', 'cubilia'),
+(58, 58, 'purus, in', 'semper'),
+(59, 59, 'ut, molestie', 'et'),
+(60, 60, 'facilisis eget,', 'nec,'),
+(61, 61, 'elementum, lorem', 'leo'),
+(62, 62, 'odio vel', 'et'),
+(63, 63, 'Quisque purus', 'Morbi'),
+(64, 64, 'et netus', 'placerat'),
+(65, 65, 'Cum sociis', 'mus.'),
+(66, 66, 'sociis natoque', 'Ut'),
+(67, 67, 'montes, nascetur', 'leo.'),
+(68, 68, 'eget metus', 'a'),
+(69, 69, 'tellus eu', 'quis,'),
+(70, 70, 'amet massa.', 'justo'),
+(71, 71, 'eros. Nam', 'tincidunt'),
+(72, 72, 'sollicitudin a,', 'metus.'),
+(73, 73, 'posuere at,', 'cursus'),
+(74, 74, 'purus, in', 'ipsum'),
+(75, 75, 'enim. Suspendisse', 'eget'),
+(76, 76, 'ornare, facilisis', 'aliquet,'),
+(77, 77, 'velit justo', 'adipiscing'),
+(78, 78, 'aliquam eros', 'et'),
+(79, 79, 'eget varius', 'Suspendisse'),
+(80, 80, 'auctor odio', 'dictum.'),
+(81, 81, 'Donec egestas.', 'parturient'),
+(82, 82, 'ante. Vivamus', 'risus'),
+(83, 83, 'egestas. Aliquam', 'amet,'),
+(84, 84, 'est mauris,', 'pede'),
+(85, 85, 'libero dui', 'eleifend'),
+(86, 86, 'porta elit,', 'et'),
+(87, 87, 'luctus felis', 'magna'),
+(88, 88, 'Nam porttitor', 'Integer'),
+(89, 89, 'orci. Ut', 'eleifend,'),
+(90, 90, 'orci, adipiscing', 'eleifend'),
+(91, 91, 'gravida sit', 'cursus.'),
+(92, 92, 'Donec tempus,', 'dui.'),
+(93, 93, 'commodo hendrerit.', 'ultrices'),
+(94, 94, 'Integer aliquam', 'sollicitudin'),
+(95, 95, 'justo. Proin', 'Nunc'),
+(96, 96, 'orci sem', 'libero'),
+(97, 97, 'magna sed', 'rutrum.'),
+(98, 98, 'massa. Integer', 'vulputate,'),
+(99, 99, 'pede blandit', 'ornare,'),
+(100, 100, 'Proin vel', 'eu,');
 
 -- --------------------------------------------------------
 
@@ -517,30 +480,6 @@ INSERT INTO `history` (`id`, `Date_Emprunt`, `Date_Retour`, `Id_Etudiant`, `ISBN
 (199, '03.15.18', '02.18.18', 38, 16),
 (200, '01.04.19', '01.06.19', 57, 7);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `themes`
---
-
-CREATE TABLE `themes` (
-  `themeId` int(11) NOT NULL,
-  `theme` varchar(255) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `themes`
---
-
-INSERT INTO `themes` (`themeId`, `theme`) VALUES
-(1, 'Aventure'),
-(2, 'Romance'),
-(3, 'Drama'),
-(4, 'Fantasy'),
-(5, 'Horreur'),
-(6, 'Mystery'),
-(7, 'Science_Fiction');
-
 --
 -- Indexes for dumped tables
 --
@@ -550,12 +489,6 @@ INSERT INTO `themes` (`themeId`, `theme`) VALUES
 --
 ALTER TABLE `books`
   ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `booksids`
---
-ALTER TABLE `booksids`
-  ADD PRIMARY KEY (`livreId`);
 
 --
 -- Indexes for table `etudiant`
@@ -572,12 +505,6 @@ ALTER TABLE `history`
   ADD KEY `fk_Etudiant_id` (`Id_Etudiant`);
 
 --
--- Indexes for table `themes`
---
-ALTER TABLE `themes`
-  ADD PRIMARY KEY (`themeId`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -586,11 +513,6 @@ ALTER TABLE `themes`
 --
 ALTER TABLE `books`
   MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
---
--- AUTO_INCREMENT for table `booksids`
---
-ALTER TABLE `booksids`
-  MODIFY `livreId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `etudiant`
 --
@@ -601,11 +523,6 @@ ALTER TABLE `etudiant`
 --
 ALTER TABLE `history`
   MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=201;
---
--- AUTO_INCREMENT for table `themes`
---
-ALTER TABLE `themes`
-  MODIFY `themeId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
