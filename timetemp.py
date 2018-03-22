@@ -48,7 +48,7 @@ def timetemp():
     # This allowed lots of control over kerning and such, and I didn't
     # want to spend a lot of time hunting down a suitable font with a
     # permissive license.
-    symbols = Image.open("images/timetemp.png")      # Bitmap w/all chars & symbols
+    symbols = Image.open("ThermalVis/images/timetemp.png")      # Bitmap w/all chars & symbols
     img     = Image.new("1", [330, 117], "white") # Working 'background' image
     draw    = ImageDraw.Draw(img)
 

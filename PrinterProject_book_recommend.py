@@ -1,4 +1,4 @@
-def recommand_book():
+def recommand_book(id_etu):
     # coding: utf-8
 
     # In[10]:
@@ -31,15 +31,15 @@ def recommand_book():
             sql = "SELECT MAX(`Id_Etudiant`)FROM `history`"
             cursor.execute(sql)
             max_id = cursor. fetchall()
-            print(max_id)
+            #print(max_id)
     finally:
         connection.close()
     #print(result3)
     themes_per_id = [];
     max_id[0]['MAX(`Id_Etudiant`)'] = max_id[0]['MAX(`Id_Etudiant`)'] + 1
     max_id_int = max_id[0]['MAX(`Id_Etudiant`)']
-    print(max_id_int)
-    print(len(result3))
+    #print(max_id_int)
+    #print(len(result3))
     #for i in range(0, len(result3)):
     #    s = result3[i]['Livre_theme']
     #    result3[i]['Livre_theme']=[]
@@ -84,7 +84,7 @@ def recommand_book():
     import numpy as np
     dist_matrix = np.zeros((max_id_int, max_id_int))
     dist_matrix[:] = np.nan
-    print(max_id_int)
+    #print(max_id_int)
     def get_index(result, index):
         ans = -1;
         for i in range(len(result)):
@@ -107,7 +107,7 @@ def recommand_book():
     array_max = np.nan_to_num(array_max)
     array_max = set(array_max)
     array_max = sorted(array_max, reverse=True)
-    print(array_max)
+    #print(array_max)
 
 
     # In[12]:
@@ -169,8 +169,8 @@ def recommand_book():
         values = np.asarray(values)
         key = find_nearest(values, 0)
         clusters_dic[clusters_centers[key]].append(i)
-    print(clusters_centers)
-    print(clusters_dic)
+    #print(clusters_centers)
+    #print(clusters_dic)
 
 
     # In[13]:
@@ -189,7 +189,7 @@ def recommand_book():
         while id_generated == id_etudiant:
             id_generated = random.randint(1,max_id_int-2)
         return id_generated
-    id_recommended = recommend(clusters_dic, clusters_centers, 2)
+    id_recommended = recommend(clusters_dic, clusters_centers, id_etu)
     recommended_theme = ""
     for i in range(0, len(newlist)):
         if(newlist[i]['Id_Etudiant'] == id_recommended):
@@ -311,7 +311,8 @@ def recommand_book():
 def gray_Scale(imgname):
     # In[14]:
     from PIL import Image
-    img = Image.open(open(imgname+'.png','rb')).convert('LA')
+    img = Image.open(open(imgname,'rb')).convert('LA')
+    #img = Image.open(imgname+'.png').convert('LA')
     imgGray = imgname+'Gray.png'
     img.save(imgGray)
     return imgGray

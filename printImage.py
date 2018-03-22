@@ -24,14 +24,22 @@ from __future__ import print_function
 import sys, os, random, getopt, re
 from Adafruit_Thermal import *
 from PIL import Image
+from PrinterProject_book_recommend import gray_Scale
 
-printer = Adafruit_Thermal("/dev/serial0", 19200, timeout=5)
-bg      = Image.new("1", [282 , 271], "white") # Working 'background' image
-img     = Image.open('images/piechartGray.png')        # Source bitmaps
-
-def printImage():
+def printImage(nameImg):
+    printer = Adafruit_Thermal("/dev/serial0", 19200, timeout=5)
+    basewidth = 400
+    img = Image.open('ThermalVis/images/'+nameImg+'.png')
+    wpercent = (basewidth/float(img.size[0]))
+    hsize = int((float(img.size[1])*float(wpercent)))
+    #bg      = Image.new("1", [282 , 271], "white") # Working 'background' image
+    bg      = Image.new("1", [basewidth , hsize], "white") # Working 'background' image
+    img = img.resize((basewidth,hsize), Image.ANTIALIAS)
+    img.save('ThermalVis/images/'+nameImg+'.png')
+    imgGray = gray_Scale("ThermalVis/images/"+nameImg+".png")
+    imgGray = Image.open(imgGray)
   # Crop number bitmaps out of source image
-    printer.printImage(img, True) # This does the printing
+    printer.printImage(imgGray, True) # This does the printing
     printer.println()
     printer.feed(3)
 
